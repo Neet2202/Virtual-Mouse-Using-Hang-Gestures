@@ -1,14 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
 
 import pyautogui
-
-
-# In[2]:
-
 
 def Action(yp, rc, bc):
        out = np.array(['move', 'false'])
@@ -36,9 +30,6 @@ def Action(yp, rc, bc):
                return out 
 
 
-# In[3]:
-
-
 def performAction( yp, rc, bc, action, drag, perform):
         if perform:
                 cursor[0] = 4*(yp[0]-110)
@@ -58,7 +49,7 @@ def performAction( yp, rc, bc, action, drag, perform):
                                 pyautogui.moveTo(8, 8)
 
 
-# In[ ]:
+
 
 
 

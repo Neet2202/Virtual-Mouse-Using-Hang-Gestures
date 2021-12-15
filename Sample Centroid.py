@@ -1,21 +1,13 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+
 
 
 import cv2
 import numpy as np
 
-
-# In[2]:
-
-
 cap= cv2.VideoCapture(0)
-
-
-# In[3]:
-
 
 import cv2
 cap = cv2.VideoCapture(0)
@@ -40,9 +32,6 @@ cap.release()
 cv2.destroyAllWindows()
 
 
-# In[ ]:
-
-
 # #*
 # while(1):
     
@@ -64,24 +53,14 @@ cv2.destroyAllWindows()
 # cv2.destroyAllWindows()
 
 
-# In[ ]:
-
 
 #create window
 window= np.ones((7,7),np.uint8)
-
-
-# In[ ]:
-
 
 #specify color ranges
 blue_range = np.array([[88,78,20],[128,255,255]])
 yellow_range = np.array([[21,70,80],[61,255,255]])
 red_range = np.array([[158,85,72],[180 ,255,255]])
-
-
-# In[ ]:
-
 
 #Remove noise
 #filter out a particular color from the frame
@@ -94,10 +73,6 @@ def makeMask(hsv_frame, color_Range):
     dilated = cv2.dilate( eroded,window, iterations=1)
     
     return mask
-
-
-# In[ ]:
-
 
 #sample image
 frameinv=cv2.imread("sample.JPEG")
@@ -113,26 +88,14 @@ cv2.imshow("Frame",b_mask) #abstract blue one
 cv2.waitKey(0)
 cv2.destroyAllWindows() 
 
-
-# In[ ]:
-
-
 #blue area
 b_area=[100,1700]
-
-
-# In[ ]:
-
 
 #swap valuea
 def swap(array,i,j):
     temp=array[i]
     array[i]=array[j]
     array[j]=temp
-
-
-# In[ ]:
-
 
 contour, _ = cv2.findContours( b_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 l=len(contour)
@@ -151,10 +114,6 @@ for i in range(l):
         if area[i] == a[j]:
             swap( contour, i, j)
 
-
-# In[ ]:
-
-
 if l > 0 :
 # finding centroid 
 
@@ -172,44 +131,12 @@ if l > 0 :
                         cv2.waitKey(0)
 
 
-# In[ ]:
-
-
 cx
-
-
-# In[ ]:
-
 
 cy
 
-
-# In[ ]:
-
-
 center=(cx,cy)
-
-
-# In[ ]:
-
 
 center
 
-
-# In[ ]:
-
-
 cv2.circle( frame, center, 5, (0,0,255), -1)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-

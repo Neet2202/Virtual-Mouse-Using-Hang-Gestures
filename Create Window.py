@@ -1,36 +1,18 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
 
 import cv2
 import numpy as np
 
-
-# In[2]:
-
-
 def color(x):
     print(x)
-
-
-# In[3]:
-
 
 #create window
 img=np.zeros((300,512,3), np.uint8)
 
-
-# In[4]:
-
-
 name = 'Calibrate'
 cv2.namedWindow(name)
-
-
-# In[5]:
-
 
 #createTrackbar
 
@@ -38,17 +20,9 @@ cv2.createTrackbar('Hue', name, 0, 255, color)
 cv2.createTrackbar('Sat', name, 0, 255, color)
 cv2.createTrackbar('Val', name, 0, 255, color)
 
-
-# In[6]:
-
-
 #switchONandOFF
 switch = '0 : OFF \n 1 : ON'
 cv2.createTrackbar(switch, name,0,1,color)
-
-
-# In[7]:
-
 
 #show window
 while(1):
@@ -70,7 +44,7 @@ while(1):
 cv2.destroyAllWindows()
 
 
-# In[ ]:
+
 
 
 

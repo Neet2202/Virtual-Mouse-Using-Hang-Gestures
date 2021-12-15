@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[4]:
-
-
 def changeStatus(key):
     global perform
     global showCentroid
@@ -39,9 +36,6 @@ def changeStatus(key):
 # Resultant frame is returned as mask 
 
 
-# In[5]:
-
-
 def drawCentroid(vid, color_area, mask, showCentroid):
 
         contour, _ = cv2.findContours( mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
@@ -74,10 +68,4 @@ def drawCentroid(vid, color_area, mask, showCentroid):
         else:
 # return error handling values
                     return (-1,-1)
-
-
-# In[ ]:
-
-
-
 
